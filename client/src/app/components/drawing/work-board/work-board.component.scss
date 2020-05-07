@@ -1,0 +1,29 @@
+@import "../../../constants/variables";
+@import "../../../constants/constant";
+
+::-webkit-scrollbar {
+  background: $bg-nav;
+  width: 0.5em;
+  height:0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7f7f7f;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #afafaf;
+}
+
+div{
+  position: relative;
+  width:100%;
+  height:100%;
+  overflow: auto;
+
+  app-drawing-board{
+    box-shadow: 0.4em 0.4em 0.5em rgba(0, 0, 0, 0.22);
+  }
+}
+

@@ -1,0 +1,43 @@
+<div id="container" (window:resize)="onResize()">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <header>
+        <h3>Nouveau Dessin</h3>
+        <button mat-button (click)="close()" type="button">
+          <i class="material-icons">close</i>
+        </button>
+      </header>
+      <mat-divider></mat-divider>
+      <div>
+        <main>
+          <mat-form-field>
+            <input matInput name="createHeight" type="text" formControlName="height"
+                   placeholder="Hauteur"
+                   (keypress)="this.keypressService.rangeValidator($event, form.get('height').value, 10000)">
+            <mat-error *ngIf='form.get("height").hasError("required")'>
+              La hauteur est invalide
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput name="createWidth" type="text" formControlName="width"
+                   placeholder="Largeur"
+                   (keypress)="this.keypressService.rangeValidator($event, form.get('width').value, 10000)">
+            <mat-error *ngIf='form.get("width").hasError("required")'>
+              La hauteur est invalide
+            </mat-error>
+          </mat-form-field>
+        </main>
+        <aside>
+          <div id="color-picker">
+            <app-color-picker [forBackground]="true" [opacity]="false" [colorSlider]="true" [palette]="true"></app-color-picker>
+          </div>
+        </aside>
+      </div>
+      <mat-divider></mat-divider>
+      <footer>
+        <div id="buttons">
+          <button mat-stroked-button cdkFocusInitial type="submit" [disabled]="form.invalid">Cr&eacute;er un Nouveau Dessin</button>
+          <button mat-button type="button" (click)="close()">Annuler</button>
+        </div>
+      </footer>
+  </form>
+</div>

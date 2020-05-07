@@ -1,0 +1,91 @@
+<div class="big" id="container">
+  <mat-divider></mat-divider>
+  <div class="scrollable">
+    <mat-accordion *ngFor="let option of options" [ngSwitch]="option.type">
+        <mat-expansion-panel id="radio-buttons-container" *ngSwitchCase="OPTION_RADIO_BUTTONS">
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{option.label}}</mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-card>
+            <mat-radio-group
+              aria-labelledby="radio-buttons-label"
+              class="radio-buttons-group"
+              (change)="updateOptions()"
+              [disabled]="!option.enabled"
+              [(ngModel)]="option.default">
+              <mat-radio-button
+                class="radio-buttons-button"
+                *ngFor="let choice of option.choices"
+                [value]="choice.icon ? choice.icon : choice.label">
+                {{choice.icon ? choice.icon : choice.label}}
+              </mat-radio-button>
+            </mat-radio-group>
+          </mat-card>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel id="slide-toggle-container" *ngSwitchCase="OPTION_SLIDE_TOGGLE">
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{option.label}}</mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-card>
+            <mat-slide-toggle
+              (change)="updateOptions()"
+              [disabled]="!option.enabled"
+              [checked]="option.default"
+              [(ngModel)]="option.default"
+              [color]="'primary'">
+            </mat-slide-toggle>
+          </mat-card>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel id="slider-container" *ngSwitchCase="OPTION_SLIDER">
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{option.label}}</mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-card>
+            <mat-slider
+              (mouseup)="updateOptions()"
+              (keyup)="updateOptions()"
+              (change)="updateOptions()"
+              [disabled]="!option.enabled"
+              [min]=option.min
+              [max]=option.max
+              [step]="1"
+              [thumbLabel]="true"
+              [(ngModel)]= option.default>
+            </mat-slider>
+          </mat-card>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel id="select-container" *ngSwitchCase="OPTION_SELECT">
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{option.label}}</mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-card>
+            <mat-form-field>
+              <mat-select
+                aria-labelledby="select-label"
+                (selectionChange)="updateOptions()"
+                [disabled]="!option.enabled"
+                [(value)]="option.default">
+                <mat-option
+                  value="{{choice.label}}"
+                  *ngFor="let choice of option.choices">
+                  <i class="material-icons" *ngIf="choice.icon">{{choice.icon}}</i>
+                  <span *ngIf="!choice.icon">{{choice.label}}</span>
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </mat-card>
+        </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Sélecteur de couleur</mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-color-picker [colorSlider]="true" [forBackground]="false" [opacity]="true" [palette]="true"></app-color-picker>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

@@ -1,0 +1,99 @@
+<div id="container">
+  <header>
+    <h3>Sauvegarder</h3>
+    <button mat-button (click)="cancel()">
+      <i class="material-icons">close</i>
+    </button>
+  </header>
+  <mat-divider></mat-divider>
+  <div id="body">
+    <aside>
+      <mat-form-field>
+        <label for="title" style="display: none"></label>
+        <input matInput id="title"
+               placeholder="Titre..."
+               name="Titre"
+               [(ngModel)]="title"
+               [formControl]="titleFormControl"
+               cdkFocusInitial>
+        <mat-error
+          *ngIf="titleFormControl.hasError('required')">
+          Un titre est <strong>requis</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field id="tags">
+        <mat-chip-list
+          #chipList
+          aria-label="Tag selection">
+          <mat-chip
+            *ngFor="let tag of tags"
+            [selectable]="selectable"
+            [removable]="removable"
+            (removed)="remove(tag)">
+            {{tag}}
+            <mat-icon
+              matChipRemove
+              *ngIf="removable">
+              cancel
+            </mat-icon>
+          </mat-chip>
+        </mat-chip-list>
+        <label for="tagInput" style="display: none"></label>
+        <input id="tagInput"
+               placeholder="Tags..."
+               #tagInput
+               [formControl]="tagCtrl"
+               [matAutocomplete]="auto"
+               [matChipInputFor]="chipList"
+               [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+               (matChipInputTokenEnd)="add($event.input, $event.value)">
+        <mat-autocomplete
+          #auto="matAutocomplete"
+          (optionSelected)="selected($event.option.viewValue)">
+          <mat-option
+            *ngFor="let tag of filteredTags | async"
+            [value]="tag">
+            {{tag}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      <!--The following radio-group is used to decide
+       if the user saves locally or on the cloud-->
+      <!--mat-radio-group
+        aria-label="Sélectionnez l'emplacement de la sauvegarde">
+        <mat-radio-button
+          [checked]="saveToServer"
+          value="server"
+          (click)="saveToServer=true">
+          Cloud
+        </mat-radio-button>
+        <mat-radio-button
+          [checked]="!saveToServer"
+          value="local"
+          (click)="saveToServer=false">
+          Local
+        </mat-radio-button>
+      </mat-radio-group-->
+    </aside>
+    <main>
+      <div id="imagePreview"></div>
+    </main>
+  </div>
+  <mat-divider></mat-divider>
+  <footer>
+    <div id="buttons">
+      <button
+        mat-stroked-button
+        [disabled]="!validateEntries() || !canSave"
+        (click)="saveSettings()">
+        Sauvegarder
+      </button>
+      <button
+        mat-button
+        (click)="cancel()">
+        Annuler
+      </button>
+    </div>
+  </footer>
+</div>

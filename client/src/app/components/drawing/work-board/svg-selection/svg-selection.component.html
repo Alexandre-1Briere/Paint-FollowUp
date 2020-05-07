@@ -1,0 +1,52 @@
+<svg>
+  <g>
+    <polygon
+       attr.points="{{rawSvgPoints}}"
+       [style.fill]="primaryColor"
+       [style.stroke]="primaryColor"
+       [style.stroke-width]="2"
+       [style.stroke-dasharray]="5"
+       [style.fill-opacity]="0.1"
+    />
+
+    <rect class="control-point" *ngIf="displayControlPoints"
+        [style.x]="(this.points[0].x + this.points[1].x - controlSquareSize) / 2"
+        [style.y]="(this.points[0].y + this.points[1].y - controlSquareSize) / 2"
+        [style.width]="controlSquareSize"
+        [style.height]="controlSquareSize"
+        [style.stroke]="primaryColor"
+        [style.stroke-width]="1"
+        [style.fill-opacity]="0"
+    />
+
+    <rect class="control-point" *ngIf="displayControlPoints"
+        [style.x]="(this.points[1].x + this.points[2].x - controlSquareSize) / 2"
+        [style.y]="(this.points[1].y + this.points[2].y - controlSquareSize) / 2"
+        [style.width]="controlSquareSize"
+        [style.height]="controlSquareSize"
+        [style.stroke]="primaryColor"
+        [style.stroke-width]="1"
+        [style.fill-opacity]="0"
+    />
+
+    <rect class="control-point" *ngIf="displayControlPoints"
+        [style.x]="(this.points[2].x + this.points[3].x - controlSquareSize) / 2"
+        [style.y]="(this.points[2].y + this.points[3].y - controlSquareSize) / 2"
+        [style.width]="controlSquareSize"
+        [style.height]="controlSquareSize"
+        [style.stroke]="primaryColor"
+        [style.stroke-width]="1"
+        [style.fill-opacity]="0"
+    />
+
+    <rect class="control-point" *ngIf="displayControlPoints"
+        [style.x]="(this.points[3].x + this.points[0].x - controlSquareSize) / 2"
+        [style.y]="(this.points[3].y + this.points[0].y - controlSquareSize) / 2"
+        [style.width]="controlSquareSize"
+        [style.height]="controlSquareSize"
+        [style.stroke]="primaryColor"
+        [style.stroke-width]="1"
+        [style.fill-opacity]="0"
+    />
+  </g>
+</svg>

@@ -1,0 +1,93 @@
+@import "../../../constants/variables";
+@import "../../../constants/constant";
+
+::-webkit-scrollbar {
+  background: $bg-nav;
+  width: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7f7f7f;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #afafaf;
+}
+
+* {
+  user-select: none;
+}
+
+#container {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  max-height: 70vh;
+}
+
+header {
+  align-content: flex-start;
+  display: flex;
+  justify-content: space-between;
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  padding-bottom: 5px;
+
+  h3 {
+    margin-right: 20px;
+  }
+}
+
+#body {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  padding: 10px 0;
+
+
+  aside {
+    width: 250px;
+    margin-right: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    mat-form-field {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    mat-radio-button {
+      display: block;
+      margin-left: 17px;
+    }
+  }
+
+  main {
+    height: 100%;
+    width: 100%;
+    align-self: center;
+  }
+}
+
+footer {
+  padding-top: 15px;
+  align-content: flex-end;
+
+  flex-direction: row;
+  align-self: flex-end;
+
+  #buttons {
+    padding: 0;
+
+    button {
+      margin-left: 10px;
+    }
+  }
+}
+

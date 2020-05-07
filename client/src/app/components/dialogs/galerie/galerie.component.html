@@ -1,0 +1,74 @@
+<div id="container">
+  <header>
+    <h3>Galerie</h3>
+    <button mat-button (click)="close()">
+      <i class="material-icons">close</i>
+    </button>
+  </header>
+  <mat-divider></mat-divider>
+  <div>
+    <aside>
+      <mat-form-field>
+        <mat-chip-list #chipList aria-label="Tag selection">
+          <mat-chip
+            *ngFor="let tag of tags"
+            [selectable]="selectable"
+            [removable]="removable"
+            (removed)="remove(tag)">
+            {{tag}}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+        </mat-chip-list>
+        <label for="tagInput" style="display: none"></label>
+        <input id="tagInput"
+               placeholder="Tags..."
+               #tagInput
+               [formControl]="tagCtrl"
+               [matAutocomplete]="auto"
+               [matChipInputFor]="chipList"
+               [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+               (matChipInputTokenEnd)="add($event.input, $event.value)"
+               cdkFocusInitial>
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event.option.viewValue)">
+          <mat-option *ngFor="let tag of filteredTags | async" [value]="tag" (click)="chipsUpdate()">
+            {{tag}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </aside>
+    <main>
+      <mat-card *ngFor="let img of images"
+                (click)="setSelected(img)"
+                [ngClass]="selectedCard === img ? 'selected-card' : ''">
+        <div *ngIf="img.inlineSVG" class="mat-card-div" id="svg={{img.id}}" (mouseup)="setSelected(img)">{{getSVG(img)}}</div>
+        <img mat-card-image *ngIf="!img.inlineSVG" src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"/>
+        <i class="material-icons delete-card-btn" (click)="deleteCard(img)">cancel</i>
+        <mat-card-content>
+          <span>Titre: {{img.title}}</span><br/>
+          <span style="font-style: italic">{{img.date.toString().substr(0, 10)}}</span>
+        </mat-card-content>
+        <mat-card-content>
+          <mat-chip-list>
+            <mat-chip *ngFor="let tag of img.tags" (click)="addTag(tag, true)">{{tag}}</mat-chip>
+          </mat-chip-list>
+        </mat-card-content>
+      </mat-card>
+      <mat-progress-spinner *ngIf="isLoading" [mode]="'indeterminate'"></mat-progress-spinner>
+      <h4 class="message"
+          *ngIf="images && tags && images.length === 0 && tags.length === 0 && !isLoading">
+        Il n'existe aucun dessin.
+      </h4>
+      <h4 class="message"
+          *ngIf="images && tags && images.length === 0 && tags.length !== 0">
+        Il n'existe aucun dessin correspondant à votre recherche.
+      </h4>
+    </main>
+  </div>
+  <mat-divider></mat-divider>
+  <footer>
+    <div id="buttons">
+      <button mat-stroked-button (click)="importImage()" [disabled]="!selectedCard">Choisir ce dessin</button>
+      <button mat-button (click)="close()">Annuler</button>
+    </div>
+  </footer>
+</div>

@@ -1,0 +1,21 @@
+<svg>
+  <defs>
+    <pattern id="frontal-grid" x="0" y="0" [attr.width]="cellSize" [attr.height]="cellSize" patternUnits="userSpaceOnUse">
+      <polyline
+        [attr.points]="rawSvgPoints"
+        fill="none"
+        [style.stroke]="primaryColor"
+        style.stroke-width="1"
+        [style.opacity]="primaryOpacity"
+      />
+    </pattern>
+  </defs>
+
+  <rect
+    style.x=0
+    style.y=0
+    [style.width]="width"
+    [style.height]="height"
+    fill="url(#frontal-grid)"
+  />
+</svg>

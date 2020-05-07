@@ -1,0 +1,142 @@
+@import "../../constants/variables";
+@import "../../constants/constant";
+
+$menuWidth: 14%;
+$minMenuWidth: 15em;
+
+
+h1, h2, p {
+  margin: 0;
+}
+
+p {
+  text-align: justify;
+}
+
+::-webkit-scrollbar {
+  background: $bg-nav;
+  width: 0.35em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $blue-color;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $blue-color-highlighted;
+}
+
+aside {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: $MAX_HEIGHT;
+  background-color: $bg-aside-color;
+  color: $light-text-color;
+  width: $menuWidth;
+  min-width: $minMenuWidth;
+
+  display: grid;
+  grid-template-rows: 5.5em 5fr 1fr;
+  grid-template-areas: "back-btn" "navbar" ".";
+
+  .back-btn {
+    grid-area: back-btn;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+  }
+
+  .scrollable {
+    overflow: auto;
+  }
+
+  .tool {
+    display: block;
+    width: 100%;
+  };
+}
+
+#container {
+  display: flex;
+  flex-direction: row;
+  height: $MAX_HEIGHT;
+
+  #aside-placeholder {
+    height: $MAX_HEIGHT;
+    width: $menuWidth;
+    min-width: $minMenuWidth;
+  }
+
+  main {
+    display: block;
+    width: 100% - $menuWidth;
+    height: $MAX_HEIGHT;
+    background-color: $bg-color;
+    color: black;
+
+    .information-window {
+      background: $bg-window;
+      margin: 1em 2em;
+      padding: 1em 2.5em;
+      border-radius: 0.35em;
+      box-shadow: 0 1px 4px hsla(0,0%,0%,0.15);
+
+      h1 {
+        font-size: 2em;
+        text-transform: uppercase;
+        margin: 0.5em 0;
+      }
+
+      h2 {
+        font-size: 1.5em;
+        margin: 1em 0 0.25em;
+      }
+
+      p {
+        font-size: 1em;
+        margin-bottom: 0.5em;
+      }
+    }
+
+    #next-prev-btns {
+      display: grid;
+      grid-template-columns: 12em auto 12em;
+      grid-template-areas: "left . right";
+      margin: 1em 2em;
+
+      .btn {
+        display: block;
+        padding: 1em 2.5em;
+        text-align: center;
+        background-color: $bg-window;
+        box-shadow: 0 1px 4px hsla(0,0%,0%,0.15);
+      }
+
+      .btn:hover {
+        background: #4285F4;
+        color: white;
+        cursor: pointer;
+      }
+
+      .btn-disable {
+        display: block;
+        padding: 1em 2.5em;
+        text-align: center;
+        background-color: $bg-window;
+        opacity: 0.55;
+        box-shadow: 0 1px 4px hsla(0,0%,0%,0.15);
+      }
+
+      #prev-btn {
+        grid-area: left;
+      }
+
+      #next-btn {
+        grid-area: right;
+      }
+    }
+  }
+}

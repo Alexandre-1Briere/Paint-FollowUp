@@ -1,0 +1,89 @@
+<div id="colorBar">
+  <div id="colorPermanent" >
+    <canvas #canvasP
+            (click)='isPrimaryCanvasSelected = true;'
+            class="canvas colorPreview" [ngClass]="isPrimaryCanvasSelected ? 'selectedColor' : ''"
+            width="30"
+            height="30"
+            id="Primary">
+    </canvas>
+
+    <canvas #canvasS
+            [style.display]="forBackground ? 'none' : ''"
+            (click)='isPrimaryCanvasSelected = false;'
+            class="canvas colorPreview" [ngClass]="!isPrimaryCanvasSelected ? 'selectedColor' : ''"
+            width="30"
+            height="30"
+            id="Secondary">
+    </canvas>
+
+    <div id="colorSwitch" *ngIf="!forBackground">
+      <fa-icon id="colorSwitchArrow" [icon]="doubleArrows" (click)="switchColor()"></fa-icon>
+    </div>
+  </div>
+
+  <div id="colorOptions">
+
+    <app-color-slider
+      *ngIf="colorSlider"
+      (colorRGBChange)="updateColorRGB($event)"
+      id="colorSlider" class="scale">
+    </app-color-slider>
+
+    <app-palette-selector
+      *ngIf="palette"
+      (hueChange)="updateHue($event)"
+      id="paletteSelector" class="scale">
+    </app-palette-selector>
+
+    <app-opacity-slider
+      *ngIf="opacity"
+      (opacityChange)="updateOpacity($event)"
+      id="opacitySlider" class="scale">
+    </app-opacity-slider>
+
+    <div id="hex">
+      <label for="hexColor" style="display: none"></label>
+      <mat-form-field color="accent">
+        <mat-label>Hex:</mat-label>
+        <input matInput [formControl]="hexFormControl"
+               id="hexColor"
+               name="hexColor"
+               type="text"
+               [(ngModel)]="colorPickerService.hexColor"
+               (keypress)="onHexKeyDown($event)">
+        <mat-error *ngIf="hexFormControl.hasError('pattern') && !hexFormControl.hasError('required')">
+          Please enter a valid hex color
+        </mat-error>
+        <mat-error *ngIf="hexFormControl.hasError('required')">
+          Hex value is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div id="usedColors" oncontextmenu="return false;" *ngIf="!forBackground">
+      <div *ngFor="let usedColor of getReversedColors()">
+        <div class="oldColor"
+             [style.background]="getRGBA(usedColor)"
+             [ngClass]="!colorIsDefined(usedColor) ? 'disabledColor' : ''"
+             (mousedown)="onMouseDown($event, usedColor)">
+        </div>
+      </div>
+    </div>
+
+    <div id="buttons">
+      <button mat-raised-button
+              type="button"
+              [ngStyle]="{'background-color': applyButtonColor}"
+              style="text-shadow: 0 0 4px rgba(0, 0, 0, 1);"
+              id="doneButton" (click)="onApplyButton()" *ngIf="!forBackground">
+        Appliquer
+      </button>
+      <button mat-button style="font-weight: lighter"
+              type="button"
+              id="backgroundDoneButton" (click)="updateBackground()" *ngIf="!forBackground">
+        Fond d'&eacute;cran
+      </button>
+    </div>
+  </div>
+</div>

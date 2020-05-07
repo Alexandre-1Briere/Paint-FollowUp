@@ -1,0 +1,89 @@
+<div #drawingBoardElement>
+    <svg #svgElement
+         version="1.1"
+         baseProfile="full"
+         xmlns="http://www.w3.org/2000/svg"
+         [attr.viewBox]="[0,0,width,height]"
+         [attr.width]="width"
+         [attr.height]="height">
+
+        <filter height="200" id="Diffuse" width="200" x="-100" y="-100">
+            <feGaussianBlur stdDeviation="3"/>
+        </filter>
+
+        <filter height="200" id="Irregular" width="200" x="-100" y="-100">
+            <feTurbulence baseFrequency="0.05" numOctaves="2"
+                          result="turbulence" type="turbulence"/>
+            <feDisplacementMap in="SourceGraphic" in2="turbulence"
+                               scale="4" xChannelSelector="G" yChannelSelector="B"/>
+        </filter>
+
+        <filter height="200" id="Foggy" width="200" x="-100" y="-100">
+            <feTurbulence baseFrequency="0.1" numOctaves="2"
+                          result="turbulence" type="turbulence"/>
+            <feColorMatrix in="turbulence"
+                           result="grayTurbulence"
+                           type="matrix"
+                           values="0.3 0.3 0.3 0.1 0
+                  0.3 0.3 0.3 0.1 0
+                  0.3 0.3 0.3 0.1 0
+                  0 0 0 0.6 0"/>
+            <feComposite in="grayTurbulence" in2="SourceGraphic" operator="in" result="foggyShape"/>
+
+            <feMerge>
+                <feMergeNode in="SourceGraphic"/>
+                <feMergeNode in="transparency"/>
+            </feMerge>
+        </filter>
+
+        <filter height="200" id="Shadow" width="200" x="-100" y="-100">
+            <feDropShadow dx="2" dy="2" stdDeviation="0.3"/>
+        </filter>
+
+        <filter height="200" id="Lighting" width="200" x="-100" y="-100">
+            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="5"/>
+            <feSpecularLighting in="blur"
+                                lighting-color="#ffffff" result="specular"
+                                specularConstant="0.75" specularExponent="12"
+                                surfaceScale="5">
+                <fePointLight x="-5000" y="-5000" z="10000"/>
+            </feSpecularLighting>
+            <feComposite in="specular" in2="SourceGraphic"
+                         operator="in" result="light"/>
+            <feMerge>
+                <feMergeNode in="SourceGraphic"/>
+                <feMergeNode in="light"/>
+            </feMerge>
+        </filter>
+
+        <filter [attr.id]="filters.GRAYSCALE">
+            <feColorMatrix type="saturate" values="0.10"/>
+        </filter>
+
+        <filter [attr.id]="filters.HUEROTATE">
+        <feColorMatrix in="SourceGraphic"
+                       type="hueRotate"
+                       values="180" />
+      </filter>
+
+      <filter [attr.id]="filters.BLUR">
+        <feGaussianBlur stdDeviation="2" />
+      </filter>
+
+      <filter [attr.id]="filters.TURBULENCE">
+        <feTurbulence type="turbulence" baseFrequency="0.05"
+                      numOctaves="2" result="turbulence"/>
+        <feDisplacementMap in2="turbulence" in="SourceGraphic"
+                           scale="50" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+
+      <filter [attr.id]="filters.MORPH">
+        <feMorphology operator="erode" radius="3"></feMorphology>
+      </filter>
+
+      <svg id="svgDrawing">
+        <rect width="100%" height="100%" [attr.fill]="backgroundColor"/>
+        <ng-template #rootSvg></ng-template>
+      </svg>
+    </svg>
+</div>

@@ -1,0 +1,81 @@
+@import "../../../constants/variables";
+@import "../../../constants/constant";
+
+::-webkit-scrollbar {
+  background: $bg-nav;
+  width: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7f7f7f;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #afafaf;
+}
+
+* {
+  user-select: auto;
+}
+
+#container {
+  padding: 0;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  max-height: 70vh;
+}
+
+header {
+  align-content: flex-start;
+  display: flex;
+  justify-content: space-between;
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  padding-bottom: 5px;
+}
+
+#body {
+  height: 100%;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  overflow: visible;
+  padding: 10px 0;
+
+  aside {
+    width: fit-content;
+    margin-right: 20px;
+    overflow-x: visible;
+    overflow-y: auto;
+  }
+
+  main {
+    height: 100%;
+    width: 100%;
+    align-self: center;
+  }
+}
+
+footer {
+  padding-top: 15px;
+  align-content: flex-end;
+
+  flex-direction: row;
+  align-self: flex-end;
+
+  #buttons {
+    padding: 0;
+    margin: 0 0 0 auto;
+    width: fit-content;
+
+    button {
+      margin-left: 10px;
+    }
+  }
+}

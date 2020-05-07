@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+
+@import '~@angular/material/theming';
+@include mat-core();
+
+// Light theme
+$light-primary: mat-palette($mat-indigo);
+$light-accent:  mat-palette($mat-pink, A200, A100, A400);
+$light-theme:   mat-light-theme($light-primary, $light-accent);
+
+// Dark theme
+$dark-primary: mat-palette($mat-blue);
+$dark-accent:  mat-palette($mat-amber, A200, A100, A400);
+$dark-warn:    mat-palette($mat-deep-orange);
+$dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+@include angular-material-theme($dark-theme);
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300, 400,500,700&display=swap');
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}

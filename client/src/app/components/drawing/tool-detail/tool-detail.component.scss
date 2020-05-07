@@ -1,0 +1,164 @@
+@import "../../../constants/variables";
+@import "../../../constants/constant";
+
+h1, h2, p {
+  margin: 0;
+}
+
+p {
+  text-align: justify;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar {
+  background: $bg-nav;
+  width: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7f7f7f;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #afafaf;
+}
+
+.big {
+  max-width: 260px;
+  overflow-x: hidden;
+  box-shadow: -1px 0px 2px 0px rgba(0,0,0,0.5);
+}
+
+#container {
+  z-index: 1;
+  height: $MAX_HEIGHT;
+  background-color: $bg-aside-color;
+  color: $light-text-color;
+  overflow-y: auto;
+
+  #displayed, #hidden {
+    transition: all 0.25s ease;
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    margin-bottom: 2em;
+  }
+
+  #displayed:hover, #hidden:hover {
+    background-color: $blue-color;
+  }
+
+  nav {
+    background-color: $bg-nav;
+    padding: 1.5em 0.25em 1em;
+    height: content-box;
+
+    ul {
+      padding-left: 2.2em;
+      list-style: none;
+
+      li {
+        margin-top: 0.25em;
+        height: 1.5em;
+        display: flex;
+
+        label {
+          display: inline-block;
+          padding-top: 0.2em;
+        }
+
+        input {
+          display: inline-block;
+          width: 2em;
+          background-color: inherit;
+          color: $light-text-color;
+          padding: 0;
+          margin:0;
+          height: 2em;
+          border:none;
+        }
+
+        select {
+          display: inline-block;
+          width: auto;
+          background-color: inherit;
+          color: $light-text-color;
+          margin:0;
+          height: 2em;
+          border:none;
+          padding-top: -0.2em;
+        }
+
+        select:hover{
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0;
+
+  height:$toolbarWidth;
+
+  color: $light-text-color;
+  border-radius: 0;
+  margin: 0;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: $bg-nav;
+  color: $light-text-color;
+}
+
+#color-picker {
+  margin-left: -2em;
+  position: absolute;
+  bottom: 2em;
+}
+
+#option-container,
+#select-container,
+#slide-toggle-container,
+#radio-buttons-container,
+#slider-container {
+  display: block;
+  width: 100%;
+}
+
+#option-container {
+  margin-left: 25px;
+}
+
+mat-slider {
+  transform: scale(1.2) translateX(3px);
+}
+
+#select-container {
+  margin-top: -5px;
+}
+
+#radio-buttons-container {
+  margin-top: 15px;
+}
+
+.radio-buttons-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-buttons-button {
+  margin: 2px;
+}
+
+app-color-picker {
+  min-height: 475px;
+  max-height: 475px;
+}

@@ -1,0 +1,8 @@
+*.xml
+.idea/codeStyles/Project.xml
+./client/coverage
+./Test Results - LocalSaverService.html
+./client/5.0.0
+./server/.idea
+./package-lock.json
+

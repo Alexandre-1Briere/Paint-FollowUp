@@ -1,0 +1,50 @@
+<div id="container">
+  <header>
+    <h3>Grille</h3>
+    <button mat-button (click)="cancel()">
+      <i class="material-icons">close</i>
+    </button>
+  </header>
+  <mat-divider></mat-divider>
+  <main>
+    <mat-card>
+      <mat-card-content>
+        <h6>Opacité de la grille %</h6>
+
+        <mat-slider
+          (mouseup)="update()"
+          (keyup)="update()"
+          (change)="update()"
+          (mousemove)="update()"
+          [max]="maxOpacity"
+          [min]="minOpacity"
+          [thumbLabel]="true"
+          [(ngModel)]="opacity">
+        </mat-slider>
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-content>
+        <h6>Taille de la grille</h6>
+
+        <mat-slider
+          (mouseup)="update()"
+          (keyup)="update()"
+          (change)="update()"
+          (mousemove)="update()"
+          [max]="maxSize"
+          [min]="minSize"
+          [thumbLabel]="true"
+          [(ngModel)]="size">
+        </mat-slider>
+      </mat-card-content>
+    </mat-card>
+  </main>
+  <mat-divider></mat-divider>
+  <footer>
+    <div id="buttons">
+      <button mat-stroked-button (click)="saveSettings()" cdkFocusInitial>Sauvegarder</button>
+      <button mat-button (click)="cancel()">Annuler</button>
+    </div>
+  </footer>
+</div>

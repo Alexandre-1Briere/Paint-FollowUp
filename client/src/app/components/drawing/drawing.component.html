@@ -1,0 +1,6 @@
+<div [style.background-color]="complementaryColor"  class="container grid">
+  <app-toolbar (selectingTool)="this.onToolChange($event)"></app-toolbar>
+  <app-work-board></app-work-board>
+  <app-tool-detail (settingChanged)="this.onSettingChange($event)" [inputConfig]="currentConfig"></app-tool-detail>
+</div>
+<router-outlet></router-outlet>

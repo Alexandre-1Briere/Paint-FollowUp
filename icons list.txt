@@ -1,0 +1,34 @@
+Swap colors: repeat
+
+undo: undo
+redo: redo
+mail: mail
+save: save
+download: cloud_download
+upload: cloud_upload
+
+applicateur de couleur: format_paint
+aerosol: blur_on
+polygone: details
+ligne jonctions: linear_scale / share
+pipette: colorize
+selection rotation: crop_rotate
+selection deplacement: transform
+cercle: panorama_fish_eye
+cercle plein: lens
+magnétisme: view_comfy / apps
+
+options: tune
+
+font size: format_size
+font underlined : format_underlined
+font italic: format_italic
+font bold: format_bold
+format align right: format_align_right
+format align center: format_align_center
+format align left: format_align_left
+
+afficher grid: grid_on
+retirer grid: grid_off
+
+use-guide subdirectory: subdirectory_arrow_right

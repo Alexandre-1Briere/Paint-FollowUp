@@ -1,0 +1,11 @@
+<div id="container">
+  <div id="content" mat-dialog-content>
+    {{content}}
+  </div>
+  <footer>
+    <div id="buttons">
+      <button mat-stroked-button (click)="confirm()" [mat-dialog-close]="true">Confirmer</button>
+      <button mat-button (click)="close()" cdkFocusInitial>Annuler</button>
+    </div>
+  </footer>
+</div>

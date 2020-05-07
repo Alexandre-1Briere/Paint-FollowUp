@@ -1,0 +1,38 @@
+@import "../../constants/variables";
+@import "../../constants/constant";
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  width: $MAX_WIDTH;
+  height: $MAX_HEIGHT;
+  max-height: $MAX_HEIGHT;
+  max-width: $MAX_WIDTH;
+  padding: 0;
+  display: flex;
+
+  background-color: $bg-color;
+}
+
+.grid {
+  grid-template: $toolbarWidth auto $tooldetailWidth;
+}
+
+app-toolbar {
+  min-width: $toolbarWidth;
+  overflow: hidden;
+  height: 100vh;
+}
+
+app-work-board {
+  height: 100vh;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+app-tool-detail {
+  width: $tooldetailWidth;
+  height: 100vh;
+}

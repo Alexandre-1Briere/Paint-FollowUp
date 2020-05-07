@@ -1,0 +1,14 @@
+<div class = "container">
+  <h1 class = "welcome"> Bienvenue sur Polydessin! </h1>
+
+  <div class = "btn-container">
+    <div>
+      <a class = "button" [ngClass]="lastDrawingFound ? '' : 'bigButton'" (click)="openComponentDialog()">Nouveau dessin</a>
+      <a class = "button" *ngIf="lastDrawingFound" (click)="continueDrawing()">Continuer un dessin</a>
+    </div>
+    <div>
+      <a class = "button" (click)="openGalerieDialog()">Galerie</a>
+      <a class = "button" routerLink="/use-guide">Guide d'utilisation</a>
+    </div>
+  </div>
+</div>

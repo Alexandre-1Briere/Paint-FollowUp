@@ -1,0 +1,55 @@
+
+<aside>
+  <button mat-button (click)="previousPage()" class="back-btn">
+    <i class="material-icons">arrow_back</i></button>
+  <div class="scrollable" style="box-shadow: inset 0 -3px 5px -3px rgba(0,0,0,0.38);">
+    <mat-divider></mat-divider>
+    <button mat-button
+            (click)="onToolClick(toolsDictionary[0][0])"
+            class="tool">
+      {{toolsDictionary[0][0].name}}
+    </button>
+    <mat-divider></mat-divider>
+    <mat-accordion class="menuTypeContainer">
+      <mat-expansion-panel
+        *ngFor="let toolByCategory of toolsDictionary" class="type">
+
+        <mat-expansion-panel-header *ngIf="toolByCategory[0].category !== 'undefined'">
+          <mat-panel-title>{{toolByCategory[0].category}}</mat-panel-title>
+        </mat-expansion-panel-header>
+
+          <button mat-button
+                  *ngFor="let tool of toolByCategory"
+                  (click)="onToolClick(tool)"
+                  [ngClass]="[
+                    flattenToolsDictionary[toolIndex].name === tool.name
+                    ? 'selected'
+                    : 'notSelected'
+                  ]" class="tool">
+            <mat-divider *ngIf="tool !== toolByCategory[0]"></mat-divider>
+            {{tool.name}}
+          </button>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+  <mat-divider></mat-divider>
+</aside>
+
+<div id="container">
+  <div id="aside-placeholder"></div>
+  <main id="description">
+    <div id="next-prev-btns">
+      <p id="prev-btn" [ngClass]="hasPrevious ? 'btn' : 'btn-disable'" (click)="setPreviousTool()">Précédent</p>
+      <p id="next-btn" [ngClass]="hasNext ? 'btn' : 'btn-disable'" (click)="setNextTool()">Suivant</p>
+    </div>
+    <div class="information-window">
+      <h1>{{documented.name}}</h1>
+      <h2 *ngIf="documented.category !== 'undefined'">Catégorie: {{documented.category}}</h2>
+      <h2 *ngIf="documented.description !== 'undefined'">Description</h2>
+      <p *ngIf="documented.description !== 'undefined'">{{documented.description}}</p>
+      <h2 *ngIf="documented.usage !== 'undefined'">Comment utiliser l'outil</h2>
+      <p *ngIf="documented.usage !== 'undefined'">{{documented.usage}}</p>
+    </div>
+  </main>
+
+</div>

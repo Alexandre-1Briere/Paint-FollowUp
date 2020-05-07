@@ -1,0 +1,51 @@
+@import "../../../constants/variables";
+@import "../../../constants/constant";
+
+* {
+  user-select: auto;
+}
+
+#container {
+  padding: 0 24px;
+  width: inherit;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+div {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 10px 0;
+
+  justify-content: center;
+}
+
+#content {
+  height: fit-content;
+  overflow: initial;
+  text-wrap: normal;
+}
+
+#buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+footer {
+  display: flex;
+  padding-top: 15px;
+  align-content: flex-end;
+  flex-direction: row;
+  align-self: flex-end;
+
+  #buttons {
+    padding: 0;
+
+    button {
+      margin-left: 10px;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<svg>
+  <g>
+    <polygon *ngIf="displayFill && displayOutline"
+             attr.points="{{rawSvgPoints}}"
+             [style.fill]="primaryColor"
+             [style.stroke]="secondaryColor"
+             [style.stroke-width]="displayOutlineThickness"
+             [style.opacity]="primaryOpacity"
+    />
+    <polygon *ngIf="displayFill && !displayOutline"
+             attr.points="{{rawSvgPoints}}"
+             [style.fill]="primaryColor"
+             [style.opacity]="primaryOpacity"
+    />
+    <polygon *ngIf="!displayFill && displayOutline"
+             attr.points="{{rawSvgPoints}}"
+             fill="none"
+             [style.stroke]="secondaryColor"
+             [style.stroke-width]="displayOutlineThickness"
+             [style.opacity]="primaryOpacity"
+    />
+  </g>
+</svg>
+

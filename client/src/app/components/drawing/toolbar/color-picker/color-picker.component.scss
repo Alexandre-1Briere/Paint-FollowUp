@@ -1,0 +1,143 @@
+@import '../../../../constants/variables';
+
+#color-picker {
+  margin-top: 1em;
+}
+
+#colorBar {
+  display: grid;
+  grid-template-areas:
+    "colorPermanent"
+    "colorOptions";
+
+  #colorPermanent{
+    grid-area: colorPermanent;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas: "Primary Secondary" "Switch Switch";
+
+    #colorSwitch{
+      grid-area: Switch;
+      display: flex;
+      justify-self: center;
+      color: $light-text-color;
+      width: fit-content;
+      transform: translate(0, -35px);
+
+      fa-icon {
+        border-radius: 3px;
+        padding: 1px;
+        background: rgba(0, 0, 0, 0.1);
+        transition: all 0.15s ease;
+      }
+
+      fa-icon:hover {
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    #Primary {
+      grid-area: Primary;
+    }
+
+    #Secondary{
+      grid-area: Secondary;
+    }
+
+    .colorPreview{
+      width: 100%;
+      height: 50px;
+      border-top: solid rgba(255, 255, 255, 0) 7px;
+    }
+
+    .colorPreview:hover {
+      cursor: pointer;
+    }
+
+    .selectedColor{
+      border: none;
+    }
+  }
+
+
+  #colorOptions{
+    grid-area: colorOptions;
+    display: grid;
+    grid-template-areas:
+      "slider     slider2d      sliderO"
+      "hex        hex               hex"
+      "usedColors usedColors usedColors"
+      "button     button         button";
+    border-width: 5px;
+
+    #buttons {
+      grid-area: button;
+      text-align: center;
+    }
+
+    #doneButton{
+      margin-top: 20px;
+    }
+
+    #backgroundDoneButton {
+      margin-top: 10px;
+    }
+
+    #hex{
+      text-align: center;
+      margin: 5px 0;
+      grid-area:hex;
+    }
+
+    #colorSlider{
+      grid-area:slider;
+      border-width: 10px;
+    }
+
+    #paletteSelector{
+      grid-area:slider2d;
+      border: 10px;
+    }
+
+    #opacitySlider{
+      grid-area:sliderO;
+      border: 10px;
+    }
+
+    #usedColors{
+      grid-area: usedColors;
+      display: grid;
+      grid-template-columns: min-content min-content min-content min-content min-content;
+      grid-column-gap: 10px;
+      margin: 0 auto;
+    }
+
+    .oldColor{
+      height: 30px;
+      width: 30px;
+      margin: 2px 0 3px 0;
+    }
+
+    .oldColor:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+
+.scale{
+  transform: scale(.8);
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
+
+.disabledColor {
+  cursor: default !important;
+}
+
+app-palette-selector {
+  margin: 0 -20px;
+
+}
+
