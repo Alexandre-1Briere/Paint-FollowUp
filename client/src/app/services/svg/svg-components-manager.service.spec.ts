@@ -5,7 +5,7 @@ import {SvgUndoRedoService} from '../undo-redo/svg-undo-redo.service';
 
 import { SvgComponentsManagerService } from './svg-components-manager.service';
 
-import { SvgRectangleComponent } from '../../components/drawing/work-board/svg-rectangle/svg-rectangle.component';
+import { SvgRectangleComponent } from '../../components/svgElement/svg-rectangle/svg-rectangle.component';
 import { SvgLayer, SvgStatus, SvgType } from '../../enums/svg';
 import { SvgJson } from '../../interfaces/svg-json';
 import { TestSpeedUpgrader } from '../../testHelpers/test-speed-upgrader.spec';

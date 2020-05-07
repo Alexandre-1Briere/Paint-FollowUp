@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SvgGridComponent } from '../../components/drawing/work-board/svg-grid/svg-grid.component';
+import { SvgGridComponent } from '../../components/svgElement/svg-grid/svg-grid.component';
 import { KEY_DOWN } from '../../constants/keyboard';
 import { KeyboardKey } from '../../enums/keyboard';
 import { GridManagerService } from './grid-manager.service';

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { SvgBrushProperties } from '../../../../logic/svg/brush/svg-brush-properties';
+import { SvgBrushProperties } from '../../../logic/svg/brush/svg-brush-properties';
 
 @Component({
   // tslint:disable-next-line

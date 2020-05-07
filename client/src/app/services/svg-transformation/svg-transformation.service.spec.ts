@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { CommonModule } from '@angular/common';
 import { Component, NgModule, ViewContainerRef } from '@angular/core';
-import { SvgRectangleComponent } from '../../components/drawing/work-board/svg-rectangle/svg-rectangle.component';
+import { SvgRectangleComponent } from '../../components/svgElement/svg-rectangle/svg-rectangle.component';
 import { SvgLayer, SvgStatus, SvgType } from '../../enums/svg';
 import { Point } from '../../interfaces/point';
 import { SvgRectangleProperties } from '../../logic/svg/rectangle/svg-rectangle-properties';

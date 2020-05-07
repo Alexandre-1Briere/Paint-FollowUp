@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { SvgSelectionProperties } from '../../../../logic/svg/selection/svg-selection-properties';
+import { SvgSelectionProperties } from '../../../logic/svg/selection/svg-selection-properties';
 
 @Component({
   // tslint:disable-next-line

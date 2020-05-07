@@ -1,4 +1,4 @@
-import { SvgEllipseComponent } from '../../../../components/drawing/work-board/svg-ellipse/svg-ellipse.component';
+import { SvgEllipseComponent } from '../../../../components/svgElement/svg-ellipse/svg-ellipse.component';
 import { SvgLayer, SvgStatus, SvgType } from '../../../../enums/svg';
 import { KeyboardState } from '../../../../logic/events/keyboard/keyboard-state';
 import { MouseEventData, MouseLocation } from '../../../../logic/events/mouse/mouse-event-data';

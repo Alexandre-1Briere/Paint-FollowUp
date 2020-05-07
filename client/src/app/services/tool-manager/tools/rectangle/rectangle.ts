@@ -1,5 +1,5 @@
 import {BORDER, FULL} from '../../../../components/drawing/tool-detail/applicable-setting.class';
-import {SvgRectangleComponent} from '../../../../components/drawing/work-board/svg-rectangle/svg-rectangle.component';
+import {SvgRectangleComponent} from '../../../../components/svgElement/svg-rectangle/svg-rectangle.component';
 import {DEFAULT_BLUE, DEFAULT_OPACITY, DEFAULT_YELLOW} from '../../../../constants/colors';
 import {KeyboardKey, KeyState} from '../../../../enums/keyboard';
 import { SvgLayer, SvgStatus, SvgType } from '../../../../enums/svg';

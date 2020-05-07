@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { SvgStampProperties } from '../../../../logic/svg/stamp/svg-stamp-properties';
+import { SvgStampProperties } from '../../../logic/svg/stamp/svg-stamp-properties';
 
 @Component({
   selector: 'svg:svg[app-svg-stamp]',

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { SvgRectangleProperties } from '../../../../logic/svg/rectangle/svg-rectangle-properties';
+import { SvgRectangleProperties } from '../../../logic/svg/rectangle/svg-rectangle-properties';
 
 @Component({
   selector: 'svg:svg[app-svg-rectangle]',

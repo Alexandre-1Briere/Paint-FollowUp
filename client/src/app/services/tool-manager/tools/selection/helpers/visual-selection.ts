@@ -1,5 +1,5 @@
 import {Collidable} from 'src/app/logic/collisions/base-collision/collidable';
-import {SvgSelectionComponent} from '../../../../../components/drawing/work-board/svg-selection/svg-selection.component';
+import {SvgSelectionComponent} from '../../../../../components/svgElement/svg-selection/svg-selection.component';
 import { SvgLayer, SvgStatus, SvgType } from '../../../../../enums/svg';
 import {Point} from '../../../../../interfaces/point';
 import {CircleCollidable} from '../../../../../logic/collisions/circle/circle-collidable';

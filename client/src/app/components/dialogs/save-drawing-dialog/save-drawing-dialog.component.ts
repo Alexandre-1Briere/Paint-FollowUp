@@ -86,7 +86,7 @@ export class SaveDrawingDialogComponent implements OnInit {
 
   validateEntries(): boolean {
     return !this.titleFormControl.hasError('required') &&
-      ImageModel.validateTags(this.tags) &&
+      ImageModel.validateTags() &&
       ImageModel.validateTitle(this.title ? this.title : '');
   }
 
@@ -144,7 +144,7 @@ export class SaveDrawingDialogComponent implements OnInit {
 
   addTag(value: string): void {
     const index = this.tags.indexOf(value.trim());
-    if (ImageModel.validateTags([value.trim()]) &&
+    if (ImageModel.validateTags() &&
         ((value || '').trim()) &&
         index < 0) { this.tags.push(value.trim()); }
   }

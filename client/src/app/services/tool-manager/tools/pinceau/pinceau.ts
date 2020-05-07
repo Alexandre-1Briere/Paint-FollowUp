@@ -1,5 +1,5 @@
-import { SvgBrushComponent } from '../../../../components/drawing/work-board/svg-brush/svg-brush.component';
-import { BrushTextures } from '../../../../components/drawing/work-board/svg-brush/textures';
+import { SvgBrushComponent } from '../../../../components/svgElement/svg-brush/svg-brush.component';
+import { BrushTextures } from '../../../../components/svgElement/svg-brush/textures';
 import { DEFAULT_BLUE, DEFAULT_OPACITY } from '../../../../constants/colors';
 import { SvgLayer, SvgStatus, SvgType } from '../../../../enums/svg';
 import { KeyboardState } from '../../../../logic/events/keyboard/keyboard-state';

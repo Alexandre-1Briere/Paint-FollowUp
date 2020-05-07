@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, NgModule, ViewContainerRef } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
-import { SvgPolylineComponent } from '../../../../components/drawing/work-board/svg-polyline/svg-polyline.component';
+import { SvgPolylineComponent } from '../../../../components/svgElement/svg-polyline/svg-polyline.component';
 import { DEFAULT_BLUE } from '../../../../constants/colors';
 import { KEY_DOWN } from '../../../../constants/keyboard';
 import { KeyboardKey } from '../../../../enums/keyboard';

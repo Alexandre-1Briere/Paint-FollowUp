@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SvgPolygonProperties } from '../../../../logic/svg/polygon/svg-polygon-properties';
+import { SvgPolygonProperties } from '../../../logic/svg/polygon/svg-polygon-properties';
 
 @Component({
   // tslint:disable-next-line:component-selector

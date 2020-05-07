@@ -1,4 +1,4 @@
-import { SvgRectangleComponent } from '../../../../components/drawing/work-board/svg-rectangle/svg-rectangle.component';
+import { SvgRectangleComponent } from '../../../../components/svgElement/svg-rectangle/svg-rectangle.component';
 import { KeyboardKey } from '../../../../enums/keyboard';
 import { SvgLayer, SvgStatus, SvgType } from '../../../../enums/svg';
 import { KeyboardState } from '../../../../logic/events/keyboard/keyboard-state';

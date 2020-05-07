@@ -1,8 +1,8 @@
 import {CommonModule} from '@angular/common';
 import {Component, NgModule, ViewContainerRef} from '@angular/core';
 import {TestBed} from '@angular/core/testing';
-import {SvgEllipseComponent} from '../../../../components/drawing/work-board/svg-ellipse/svg-ellipse.component';
-import {SvgSelectionComponent} from '../../../../components/drawing/work-board/svg-selection/svg-selection.component';
+import {SvgEllipseComponent} from '../../../../components/svgElement/svg-ellipse/svg-ellipse.component';
+import {SvgSelectionComponent} from '../../../../components/svgElement/svg-selection/svg-selection.component';
 import {DEFAULT_BLUE, DEFAULT_YELLOW} from '../../../../constants/colors';
 import {KEY_DOWN} from '../../../../constants/keyboard';
 import {KeyboardKey} from '../../../../enums/keyboard';

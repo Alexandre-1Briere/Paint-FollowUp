@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SvgGridComponent } from '../../components/drawing/work-board/svg-grid/svg-grid.component';
+import { SvgGridComponent } from '../../components/svgElement/svg-grid/svg-grid.component';
 import { KeyboardKey } from '../../enums/keyboard';
 import { SvgLayer, SvgStatus, SvgType } from '../../enums/svg';
 import { KeyboardManagerService } from '../events/keyboard-manager.service';

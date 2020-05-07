@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { SvgPolylineProperties } from '../../../../logic/svg/polyline/svg-polyline-properties';
+import { SvgPolylineProperties } from '../../../logic/svg/polyline/svg-polyline-properties';
 
 @Component({
   // tslint:disable-next-line

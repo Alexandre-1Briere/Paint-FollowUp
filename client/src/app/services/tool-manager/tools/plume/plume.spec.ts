@@ -1,6 +1,6 @@
 import { Component, NgModule, ViewContainerRef } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
-import { SvgFeatherComponent } from '../../../../components/drawing/work-board/svg-feather/svg-feather.component';
+import { SvgFeatherComponent } from '../../../../components/svgElement/svg-feather/svg-feather.component';
 import { DEFAULT_BLUE } from '../../../../constants/colors';
 import { KeyboardState } from '../../../../logic/events/keyboard/keyboard-state';
 import { MouseButtonAction, MouseEventData, MouseLocation, MouseMovement } from '../../../../logic/events/mouse/mouse-event-data';

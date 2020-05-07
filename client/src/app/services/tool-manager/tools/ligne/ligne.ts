@@ -1,4 +1,4 @@
-import {SvgPolylineComponent} from '../../../../components/drawing/work-board/svg-polyline/svg-polyline.component';
+import {SvgPolylineComponent} from '../../../../components/svgElement/svg-polyline/svg-polyline.component';
 import {DEFAULT_BLUE, DEFAULT_OPACITY} from '../../../../constants/colors';
 import {KeyboardKey} from '../../../../enums/keyboard';
 import {SvgLayer, SvgStatus, SvgType} from '../../../../enums/svg';

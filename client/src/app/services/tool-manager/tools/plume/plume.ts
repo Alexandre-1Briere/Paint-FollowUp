@@ -1,5 +1,5 @@
 import { ANGLE } from '../../../../components/drawing/tool-detail/applicable-setting.class';
-import { SvgFeatherComponent } from '../../../../components/drawing/work-board/svg-feather/svg-feather.component';
+import { SvgFeatherComponent } from '../../../../components/svgElement/svg-feather/svg-feather.component';
 import {DEFAULT_BLUE, DEFAULT_OPACITY} from '../../../../constants/colors';
 import { KeyboardKey } from '../../../../enums/keyboard';
 import { SvgLayer, SvgStatus, SvgType } from '../../../../enums/svg';

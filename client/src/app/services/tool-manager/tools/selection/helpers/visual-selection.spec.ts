@@ -1,7 +1,7 @@
 import {CommonModule} from '@angular/common';
 import {Component, NgModule, ViewContainerRef} from '@angular/core';
 import {TestBed} from '@angular/core/testing';
-import {SvgSelectionComponent} from '../../../../../components/drawing/work-board/svg-selection/svg-selection.component';
+import {SvgSelectionComponent} from '../../../../../components/svgElement/svg-selection/svg-selection.component';
 import {Point} from '../../../../../interfaces/point';
 import {CollisionDetection} from '../../../../../logic/collisions/detection/collision-detection';
 import {PolygonCollidable} from '../../../../../logic/collisions/polygon/polygon-collidable';

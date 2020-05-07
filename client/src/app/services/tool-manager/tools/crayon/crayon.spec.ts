@@ -1,6 +1,6 @@
 import { Component, NgModule, ViewContainerRef } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
-import { SvgPencilComponent } from '../../../../components/drawing/work-board/svg-pencil/svg-pencil.component';
+import { SvgPencilComponent } from '../../../../components/svgElement/svg-pencil/svg-pencil.component';
 import { DEFAULT_BLUE } from '../../../../constants/colors';
 import { KeyboardState } from '../../../../logic/events/keyboard/keyboard-state';
 import { MouseButtonAction, MouseEventData, MouseLocation, MouseMovement } from '../../../../logic/events/mouse/mouse-event-data';

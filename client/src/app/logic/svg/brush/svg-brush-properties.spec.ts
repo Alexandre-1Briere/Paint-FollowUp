@@ -1,4 +1,4 @@
-import { BrushTextures } from '../../../components/drawing/work-board/svg-brush/textures';
+import { BrushTextures } from '../../../components/svgElement/svg-brush/textures';
 import { SvgBrushProperties } from './svg-brush-properties';
 
 class SvgBrushTestable extends SvgBrushProperties {

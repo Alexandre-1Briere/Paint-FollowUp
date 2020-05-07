@@ -1,6 +1,6 @@
 import {BORDER, FULL} from '../../../../components/drawing/tool-detail/applicable-setting.class';
-import {SvgPolygonComponent} from '../../../../components/drawing/work-board/svg-polygon/svg-polygon.component';
-import {SvgSelectionComponent} from '../../../../components/drawing/work-board/svg-selection/svg-selection.component';
+import {SvgPolygonComponent} from '../../../../components/svgElement/svg-polygon/svg-polygon.component';
+import {SvgSelectionComponent} from '../../../../components/svgElement/svg-selection/svg-selection.component';
 import { SvgLayer, SvgStatus, SvgType } from '../../../../enums/svg';
 import {KeyboardState} from '../../../../logic/events/keyboard/keyboard-state';
 import {MouseEventData, MouseLocation} from '../../../../logic/events/mouse/mouse-event-data';

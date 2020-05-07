@@ -1,4 +1,4 @@
-import { SvgRectangleComponent } from '../../../components/drawing/work-board/svg-rectangle/svg-rectangle.component';
+import { SvgRectangleComponent } from '../../../components/svgElement/svg-rectangle/svg-rectangle.component';
 import { SvgType } from '../../../enums/svg';
 import { SvgProperties } from './svg-properties';
 

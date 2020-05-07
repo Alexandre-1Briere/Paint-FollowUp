@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
-import { SvgAerosolComponent } from '../../../../components/drawing/work-board/svg-aerosol/svg-aerosol.component';
+import { SvgAerosolComponent } from '../../../../components/svgElement/svg-aerosol/svg-aerosol.component';
 import { SvgLayer, SvgStatus, SvgType } from '../../../../enums/svg';
 import { KeyboardState } from '../../../../logic/events/keyboard/keyboard-state';
 import { MouseEventData, MouseLocation, MouseMovement } from '../../../../logic/events/mouse/mouse-event-data';

@@ -14,7 +14,7 @@ import {
     STAY_AT_HOME,
     STYLE,
 } from '../components/drawing/tool-detail/applicable-setting.class';
-import { BrushTextures, brushTexturesTranslation } from '../components/drawing/work-board/svg-brush/textures';
+import { BrushTextures, brushTexturesTranslation } from '../components/svgElement/svg-brush/textures';
 import { Documented } from '../interfaces/documented';
 import { OPTION_SELECT, OPTION_SLIDE_TOGGLE, OPTION_SLIDER } from './options-types';
 

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, NgModule, ViewContainerRef } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
-import { SvgRectangleComponent } from '../../../../components/drawing/work-board/svg-rectangle/svg-rectangle.component';
+import { SvgRectangleComponent } from '../../../../components/svgElement/svg-rectangle/svg-rectangle.component';
 import { DEFAULT_BLUE, DEFAULT_YELLOW } from '../../../../constants/colors';
 import { KEY_DOWN } from '../../../../constants/keyboard';
 import { KeyboardKey } from '../../../../enums/keyboard';

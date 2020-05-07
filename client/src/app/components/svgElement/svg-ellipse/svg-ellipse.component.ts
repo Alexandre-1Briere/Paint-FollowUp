@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SvgEllipseProperties } from '../../../../logic/svg/ellipse/svg-ellipse-properties';
+import { SvgEllipseProperties } from '../../../logic/svg/ellipse/svg-ellipse-properties';
 
 @Component({
   // tslint:disable-next-line:component-selector

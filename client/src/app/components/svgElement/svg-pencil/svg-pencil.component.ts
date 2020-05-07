@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { SvgPencilProperties } from '../../../../logic/svg/base-pencil/svg-pencil-properties';
+import { SvgPencilProperties } from '../../../logic/svg/base-pencil/svg-pencil-properties';
 
 @Component({
   // tslint:disable-next-line

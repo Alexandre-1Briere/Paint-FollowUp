@@ -1,8 +1,8 @@
 import {CommonModule} from '@angular/common';
 import {Component, NgModule, ViewContainerRef} from '@angular/core';
 import {TestBed} from '@angular/core/testing';
-import {SvgPolygonComponent} from '../../../../components/drawing/work-board/svg-polygon/svg-polygon.component';
-import {SvgSelectionComponent} from '../../../../components/drawing/work-board/svg-selection/svg-selection.component';
+import {SvgPolygonComponent} from '../../../../components/svgElement/svg-polygon/svg-polygon.component';
+import {SvgSelectionComponent} from '../../../../components/svgElement/svg-selection/svg-selection.component';
 import {SvgStatus} from '../../../../enums/svg';
 import {KeyboardState} from '../../../../logic/events/keyboard/keyboard-state';
 import {MouseEventData, MouseLocation, } from '../../../../logic/events/mouse/mouse-event-data';

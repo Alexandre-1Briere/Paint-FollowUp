@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CommonModule } from '@angular/common';
 import { Component, NgModule, ViewContainerRef } from '@angular/core';
 import { DrawingBoardComponent } from '../../components/drawing/work-board/drawing-board/drawing-board.component';
-import { SvgRectangleComponent } from '../../components/drawing/work-board/svg-rectangle/svg-rectangle.component';
+import { SvgRectangleComponent } from '../../components/svgElement/svg-rectangle/svg-rectangle.component';
 import { SvgLayer, SvgStatus } from '../../enums/svg';
 import { TestSpeedUpgrader } from '../../testHelpers/test-speed-upgrader.spec';
 import { ViewManagerService } from './view-manager.service';

@@ -1,4 +1,4 @@
-import { SvgRectangleComponent } from '../../../../components/drawing/work-board/svg-rectangle/svg-rectangle.component';
+import { SvgRectangleComponent } from '../../../../components/svgElement/svg-rectangle/svg-rectangle.component';
 import { SvgLayer, SvgStatus, SvgType } from '../../../../enums/svg';
 import { KeyboardState } from '../../../../logic/events/keyboard/keyboard-state';
 import { MouseEventData, MouseLocation } from '../../../../logic/events/mouse/mouse-event-data';

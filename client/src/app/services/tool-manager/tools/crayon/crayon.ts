@@ -1,4 +1,4 @@
-import {SvgPencilComponent} from '../../../../components/drawing/work-board/svg-pencil/svg-pencil.component';
+import {SvgPencilComponent} from '../../../../components/svgElement/svg-pencil/svg-pencil.component';
 import {DEFAULT_BLUE, DEFAULT_OPACITY} from '../../../../constants/colors';
 import { SvgLayer, SvgStatus, SvgType } from '../../../../enums/svg';
 import {KeyboardState} from '../../../../logic/events/keyboard/keyboard-state';

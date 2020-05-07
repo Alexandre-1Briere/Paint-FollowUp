@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
-import { SvgRectangleComponent } from '../../../../components/drawing/work-board/svg-rectangle/svg-rectangle.component';
-import { SvgSelectionComponent } from '../../../../components/drawing/work-board/svg-selection/svg-selection.component';
+import { SvgRectangleComponent } from '../../../../components/svgElement/svg-rectangle/svg-rectangle.component';
+import { SvgSelectionComponent } from '../../../../components/svgElement/svg-selection/svg-selection.component';
 import { SvgLayer, SvgStatus, SvgType } from '../../../../enums/svg';
 import { Point } from '../../../../interfaces/point';
 import { KeyboardState } from '../../../../logic/events/keyboard/keyboard-state';

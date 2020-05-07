@@ -1,5 +1,5 @@
 import { ANGLE } from '../../../../components/drawing/tool-detail/applicable-setting.class';
-import { SvgStampComponent } from '../../../../components/drawing/work-board/svg-stamp/svg-stamp.component';
+import { SvgStampComponent } from '../../../../components/svgElement/svg-stamp/svg-stamp.component';
 import { KeyboardKey } from '../../../../enums/keyboard';
 import { SvgLayer, SvgStatus, SvgType } from '../../../../enums/svg';
 import { KeyboardState } from '../../../../logic/events/keyboard/keyboard-state';

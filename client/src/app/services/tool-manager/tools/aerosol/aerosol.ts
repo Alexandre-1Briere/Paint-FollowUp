@@ -1,4 +1,4 @@
-import { SvgAerosolComponent } from '../../../../components/drawing/work-board/svg-aerosol/svg-aerosol.component';
+import { SvgAerosolComponent } from '../../../../components/svgElement/svg-aerosol/svg-aerosol.component';
 import { DEFAULT_OPACITY } from '../../../../constants/colors';
 import { SvgLayer, SvgStatus, SvgType } from '../../../../enums/svg';
 import { KeyboardState } from '../../../../logic/events/keyboard/keyboard-state';

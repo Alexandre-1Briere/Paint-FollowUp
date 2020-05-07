@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {SvgGridProperties} from '../../../../logic/svg/grid/svg-grid-properties';
+import {SvgGridProperties} from '../../../logic/svg/grid/svg-grid-properties';
 
 @Component({
   // tslint:disable-next-line

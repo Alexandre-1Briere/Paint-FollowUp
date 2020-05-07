@@ -1,6 +1,6 @@
 import {BORDER, FULL} from '../../../../components/drawing/tool-detail/applicable-setting.class';
-import {SvgEllipseComponent} from '../../../../components/drawing/work-board/svg-ellipse/svg-ellipse.component';
-import {SvgSelectionComponent} from '../../../../components/drawing/work-board/svg-selection/svg-selection.component';
+import {SvgEllipseComponent} from '../../../../components/svgElement/svg-ellipse/svg-ellipse.component';
+import {SvgSelectionComponent} from '../../../../components/svgElement/svg-selection/svg-selection.component';
 import {DEFAULT_BLUE, DEFAULT_OPACITY, DEFAULT_YELLOW} from '../../../../constants/colors';
 import {KeyboardKey, KeyState} from '../../../../enums/keyboard';
 import { SvgLayer, SvgStatus, SvgType } from '../../../../enums/svg';

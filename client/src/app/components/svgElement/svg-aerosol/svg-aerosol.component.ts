@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SvgAerosolProperties } from '../../../../logic/svg/aerosol/svg-aerosol-properties';
+import { SvgAerosolProperties } from '../../../logic/svg/aerosol/svg-aerosol-properties';
 
 @Component({
   // tslint:disable-next-line:component-selector

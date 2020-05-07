@@ -1,4 +1,4 @@
-import { BrushTextures } from '../../../components/drawing/work-board/svg-brush/textures';
+import { BrushTextures } from '../../../components/svgElement/svg-brush/textures';
 import { SvgType } from '../../../enums/svg';
 import { SvgPencilProperties } from '../base-pencil/svg-pencil-properties';
 

@@ -1,4 +1,4 @@
-import { SvgBucketComponent } from '../../../../components/drawing/work-board/svg-bucket/svg-bucket.component';
+import { SvgBucketComponent } from '../../../../components/svgElement/svg-bucket/svg-bucket.component';
 import { DEFAULT_BLUE, DEFAULT_OPACITY } from '../../../../constants/colors';
 import { SvgLayer, SvgStatus, SvgType } from '../../../../enums/svg';
 import { KeyboardState } from '../../../../logic/events/keyboard/keyboard-state';
