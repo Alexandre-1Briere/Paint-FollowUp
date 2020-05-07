@@ -1,13 +1,11 @@
 import { Choice } from '../../../services/tool-manager/tools-options-manager/tools-options/choice';
 import { Option } from '../../../services/tool-manager/tools-options-manager/tools-options/option';
-import { BrushTextures, indexToBrushTextures } from '../work-board/svg-brush/textures';
+import { BrushTextures, indexToBrushTextures } from '../../svgElement/svg-brush/textures';
 
 export const FULL = 'Plein';
 export const BORDER = 'Contour';
 export const NORMAL = 'PleinContour';
 
-export const BRAIN = 'brain';
-export const ROBOTIC_ARM = 'arm';
 export const DRONE = 'drone';
 export const STAY_AT_HOME = 'stay-at-home';
 export const HOSPITAL = 'hospital';
@@ -36,10 +34,6 @@ export class ApplicableSettingClass {
 
   constructor() {
     this.options = [];
-  }
-
-  setAngle(value: string): void {
-    this.size = this.setValue(value);
   }
 
   setSize(value: string): void {
