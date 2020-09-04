@@ -27,12 +27,8 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app/app.component';
 import { ConfirmCancelDialogComponent } from './components/dialogs/confirm-cancel-dialog/confirm-cancel-dialog.component';
-import { CreateNewDrawingComponent } from './components/dialogs/create-new-drawing/create-new-drawing.component';
-import { DownloadDialogComponent } from './components/dialogs/download-dialog/download-dialog.component';
-import { GalerieComponent } from './components/dialogs/galerie/galerie.component';
 import { GridOptionsDialogComponent } from './components/dialogs/grid-options-dialog/grid-options-dialog.component';
 import { MessageDialogComponent } from './components/dialogs/message-dialog/message-dialog.component';
-import { SaveDrawingDialogComponent } from './components/dialogs/save-drawing-dialog/save-drawing-dialog.component';
 import { DrawingComponent } from './components/drawing/drawing.component';
 import { ToolDetailComponent } from './components/drawing/tool-detail/tool-detail.component';
 import { ColorPickerComponent } from './components/drawing/toolbar/color-picker/color-picker.component';
@@ -41,21 +37,11 @@ import { OpacityComponent } from './components/drawing/toolbar/color-picker/opac
 import { PaletteSelectorComponent } from './components/drawing/toolbar/color-picker/palette-selector/palette-selector.component';
 import { ToolbarComponent } from './components/drawing/toolbar/toolbar.component';
 import { DrawingBoardComponent } from './components/drawing/work-board/drawing-board/drawing-board.component';
-import { SvgAerosolComponent } from './components/svgElement/svg-aerosol/svg-aerosol.component';
-import { SvgBrushComponent } from './components/svgElement/svg-brush/svg-brush.component';
-import { SvgBucketComponent } from './components/svgElement/svg-bucket/svg-bucket.component';
-import { SvgEllipseComponent } from './components/svgElement/svg-ellipse/svg-ellipse.component';
-import { SvgFeatherComponent } from './components/svgElement/svg-feather/svg-feather.component';
-import { SvgGridComponent } from './components/svgElement/svg-grid/svg-grid.component';
-import { SvgPencilComponent } from './components/svgElement/svg-pencil/svg-pencil.component';
-import { SvgPolygonComponent } from './components/svgElement/svg-polygon/svg-polygon.component';
-import { SvgPolylineComponent } from './components/svgElement/svg-polyline/svg-polyline.component';
-import { SvgRectangleComponent } from './components/svgElement/svg-rectangle/svg-rectangle.component';
-import { SvgSelectionComponent } from './components/svgElement/svg-selection/svg-selection.component';
-import { SvgStampComponent } from './components/svgElement/svg-stamp/svg-stamp.component';
 import { WorkBoardComponent } from './components/drawing/work-board/work-board.component';
 import { EntryPointComponent } from './components/entry-point/entry-point.component';
-import { UseGuideComponent } from './components/use-guide/use-guide.component';
+import { SvgGridComponent } from './components/svgElement/svg-grid/svg-grid.component';
+import { SvgPencilComponent } from './components/svgElement/svg-pencil/svg-pencil.component';
+import { SvgRectangleComponent } from './components/svgElement/svg-rectangle/svg-rectangle.component';
 import { ColorPickerService } from './services/color-picker/color-picker.service';
 
 @NgModule({
@@ -67,52 +53,25 @@ import { ColorPickerService } from './services/color-picker/color-picker.service
     DrawingBoardComponent,
     WorkBoardComponent,
     EntryPointComponent,
-    CreateNewDrawingComponent,
     ColorSliderComponent,
     PaletteSelectorComponent,
     OpacityComponent,
-    UseGuideComponent,
     SvgRectangleComponent,
-    SvgPolylineComponent,
     ToolDetailComponent,
     SvgPencilComponent,
-    SvgBrushComponent,
-    SvgSelectionComponent,
-    SvgEllipseComponent,
-    DownloadDialogComponent,
-    SvgAerosolComponent,
     SvgGridComponent,
-    SvgPolygonComponent,
-    GalerieComponent,
     GridOptionsDialogComponent,
-    SaveDrawingDialogComponent,
     ConfirmCancelDialogComponent,
     MessageDialogComponent,
-    SvgFeatherComponent,
-    SvgBucketComponent,
-    SvgStampComponent,
   ],
   entryComponents: [
     EntryPointComponent,
-    CreateNewDrawingComponent,
-    GalerieComponent,
-    SvgPolylineComponent,
     SvgRectangleComponent,
     SvgPencilComponent,
-    SvgBrushComponent,
-    SvgEllipseComponent,
-    SvgSelectionComponent,
-    DownloadDialogComponent,
-    SvgAerosolComponent,
     SvgGridComponent,
-    SvgPolygonComponent,
     GridOptionsDialogComponent,
-    SaveDrawingDialogComponent,
     ConfirmCancelDialogComponent,
     MessageDialogComponent,
-    SvgFeatherComponent,
-    SvgBucketComponent,
-    SvgStampComponent,
   ],
   imports: [
     BrowserModule,

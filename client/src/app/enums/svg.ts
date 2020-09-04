@@ -19,17 +19,8 @@ export enum SvgStatus {
 
 export enum SvgType {
   SvgRectangleComponent,
-  SvgPolylineComponent,
-  SvgEllipseComponent,
   SvgGridComponent,
   SvgPencilComponent,
-  SvgBrushComponent,
-  SvgSelectionComponent,
-  SvgAerosolComponent,
-  SvgPolygonComponent,
-  SvgFeatherComponent,
-  SvgBucketComponent,
-  SvgStampComponent,
 }
 
 export enum SvgUndoRedoChange {

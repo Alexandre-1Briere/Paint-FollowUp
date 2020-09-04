@@ -21,40 +21,19 @@
   </div>
   <div id="lower-btns">
     <mat-divider></mat-divider>
-    <div id="save-load" class="small-container">
-      <i class="material-icons menu-item small-height left-item" [matTooltip]="'Sauvegarder [CTLR+S]'" (click)="cloudUpload()"
-         [ngClass]="!cloudUploadEnabled ? 'disabled': ''">cloud_upload</i>
-      <i class="material-icons menu-item small-height right-item" [matTooltip]="'Galerie [CTRL+G]'" (click)="cloudDownload()">cloud_download</i>
-    </div>
+
     <div id="undo-redo" class="small-container">
       <i class="material-icons menu-item small-height left-item" [matTooltip]="'Undo [CTRL+Z]'" (click)="undo()"
          [ngClass]="!undoRedoService.undoIsAvailable() ? 'disabled' : ''">undo</i>
       <i class="material-icons menu-item small-height right-item" [matTooltip]="'Redo [CTRL+SHIFT+Z]'" (click)="redo()"
          [ngClass]="!undoRedoService.redoIsAvailable() ? 'disabled' : ''">redo</i>
     </div>
-    <div id="cut-remove" class="small-container">
-      <i class="material-icons menu-item small-height left-item" [matTooltip]="'Dupliquer la sélection [CTRL+D]'" (click)="duplicate()"
-         [ngClass]="!clipboardService.ctrlDIsAvailable() ? 'disabled' : ''">layers</i>
-      <i class="material-icons menu-item small-height right-item" [matTooltip]="'Couper la sélection [CTRL+X]'" (click)="cut()"
-         [ngClass]="!clipboardService.ctrlXIsAvailable() ? 'disabled' : ''">flip_to_back</i>
-    </div>
-    <div id="copy-paste" class="small-container">
-      <i class="material-icons menu-item small-height left-item" [matTooltip]="'Copier la sélection [CTRL+C]'" (click)="copy()"
-         [ngClass]="!clipboardService.ctrlCIsAvailable() ? 'disabled' : ''">file_copy</i>
-      <i class="material-icons menu-item small-height right-item" [matTooltip]="'Coller la sélection [CTRL+V]'" (click)="paste()"
-         [ngClass]="!clipboardService.ctrlVIsAvailable() ? 'disabled' : ''">filter_none</i>
-    </div>
     <div id="grid-duplicate" class="small-container">
       <i class="material-icons menu-item small-height left-item"
          [matTooltip]="!gridManagerService.getIsActive() ? 'Afficher la grille [G]' : 'Retirer la grille [G]'"
-         (click)="toggleGrid()" (dblclick)="showGridOptions()"
+         (click)="toggleGrid()"
          [textContent]="gridManagerService.getIsActive() ? 'grid_off' : 'grid_on'"></i>
-      <i class="material-icons menu-item small-height right-item" [matTooltip]="'Supprimer la selection [DEL]'" (click)="delete()"
-         [ngClass]="!clipboardService.deleteIsAvailable() ? 'disabled' : ''">clear</i>
-    </div>
-    <div id="guide-save" class="small-container">
-      <i class="material-icons menu-item small-height left-item" [matTooltip]="'Guide d\'utilisation'" routerLink="/use-guide">menu_book</i>
-      <i (click)="openDownloadDialog()" [matTooltip]="'Exporter [CTRL+E]'" class="material-icons menu-item small-height right-item">launch</i>
+      <i class="material-icons menu-item small-height left-item" [matTooltip]="'Guide d\'utilisation'">menu_book</i>
     </div>
   </div>
 </div>

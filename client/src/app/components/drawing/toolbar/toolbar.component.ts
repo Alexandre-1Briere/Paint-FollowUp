@@ -2,8 +2,6 @@ import { Location } from '@angular/common';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { toolsConfig } from '../../../constants/tool-config';
-import { ClipboardService } from '../../../services/clipboard/clipboard.service';
-import { KeyboardManagerService } from '../../../services/events/keyboard-manager.service';
 import { GridManagerService } from '../../../services/grid-manager/grid-manager.service';
 import { SvgComponentsManagerService } from '../../../services/svg/svg-components-manager.service';
 import { ToolManagerService } from '../../../services/tool-manager/tool-manager.service';
@@ -11,10 +9,6 @@ import { Tool } from '../../../services/tool-manager/tools/tool/tool';
 import { tools } from '../../../services/tool-manager/tools/tools';
 import { SvgUndoRedoService } from '../../../services/undo-redo/svg-undo-redo.service';
 import { UseGuideService } from '../../../services/use-guide/use-guide.service';
-import { DownloadDialogComponent } from '../../dialogs/download-dialog/download-dialog.component';
-import { GalerieComponent } from '../../dialogs/galerie/galerie.component';
-import { GridOptionsDialogComponent } from '../../dialogs/grid-options-dialog/grid-options-dialog.component';
-import { SaveDrawingDialogComponent } from '../../dialogs/save-drawing-dialog/save-drawing-dialog.component';
 import { Config } from '../tool-detail/applicable-setting.class';
 
 @Component({
@@ -33,10 +27,8 @@ export class ToolbarComponent implements OnInit {
 
   cloudUploadEnabled: boolean;
 
-  constructor(private clipboardService: ClipboardService,
-              private toolManagerService: ToolManagerService,
+  constructor(private toolManagerService: ToolManagerService,
               private useGuideService: UseGuideService,
-              private keyboardManagerService: KeyboardManagerService,
               public gridManagerService: GridManagerService,
               public undoRedoService: SvgUndoRedoService,
               public location: Location,
@@ -110,20 +102,6 @@ export class ToolbarComponent implements OnInit {
     }
   }
 
-  cloudUpload(): void {
-    this.cloudUploadEnabled = false;
-    this.dialog.open(SaveDrawingDialogComponent).afterClosed().subscribe(this.onCloudUploadDialogClose);
-  }
-
-  private onCloudUploadDialogClose(): void {
-    this.cloudUploadEnabled = true;
-    this.undoRedoService.checkIfAnyUserChanges(true);
-  }
-
-  cloudDownload(): void {
-    this.dialog.open(GalerieComponent);
-  }
-
   undo(): void {
     this.undoRedoService.undo();
   }
@@ -132,44 +110,7 @@ export class ToolbarComponent implements OnInit {
     this.undoRedoService.redo();
   }
 
-  duplicate(): void {
-    const selection = this.clipboardService.getSelectionIfAvailable();
-    if (!selection) { return; }
-    selection.tryToDuplicateSelection();
-  }
-
-  copy(): void {
-    const selection = this.clipboardService.getSelectionIfAvailable();
-    if (!selection) { return; }
-    selection.tryToCopySelection();
-  }
-
-  paste(): void {
-    this.clipboardService.tryToPasteContent();
-  }
-
-  cut(): void {
-    const selection = this.clipboardService.getSelectionIfAvailable();
-    if (!selection) { return; }
-    selection.tryToCutSelection();
-  }
-
-  delete(): void {
-    const selection = this.clipboardService.getSelectionIfAvailable();
-    if (!selection) { return; }
-    selection.tryToDeleteSelection();
-  }
-
   toggleGrid(): void {
     this.gridManagerService.toggleIsActive();
-  }
-
-  showGridOptions(): void {
-    this.keyboardManagerService.enableShortcuts = false;
-    this.dialog.open(GridOptionsDialogComponent);
-  }
-
-  openDownloadDialog(): void {
-    this.dialog.open(DownloadDialogComponent);
   }
 }

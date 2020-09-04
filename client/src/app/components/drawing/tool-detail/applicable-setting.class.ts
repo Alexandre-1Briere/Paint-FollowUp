@@ -1,18 +1,12 @@
-import { Choice } from '../../../services/tool-manager/tools-options-manager/tools-options/choice';
 import { Option } from '../../../services/tool-manager/tools-options-manager/tools-options/option';
-import { BrushTextures, indexToBrushTextures } from '../../svgElement/svg-brush/textures';
 
 export const FULL = 'Plein';
 export const BORDER = 'Contour';
-export const NORMAL = 'PleinContour';
 
-export const DRONE = 'drone';
 export const STAY_AT_HOME = 'stay-at-home';
-export const HOSPITAL = 'hospital';
 export const ROBOT = 'robot';
 export const ANGLE = 'angle';
 export const SIZE = 'size';
-export const APPROVED = 'approved';
 export const BORDER_SIZE = 'border-size';
 export const STYLE = 'tracing-type';
 export const POINTS_SIZE = 'points-size';
@@ -26,7 +20,6 @@ export class ApplicableSettingClass {
   borderSize: number | undefined;
   primaryColor: string;
   secondaryColor: string;
-  brushTexture: BrushTextures | undefined;
   tracingType: string | undefined;
   primaryOpacity: number;
   secondaryOpacity: number;
@@ -77,7 +70,6 @@ export class ApplicableSettingClass {
     this.pointsSize = config.pointsSize;
     this.tracingType = config.tracingType;
 
-    this.brushTexture = config.brushTexture ? config.brushTexture : undefined;
   }
 
   configureOptions(options: Option[]): void {
@@ -89,11 +81,6 @@ export class ApplicableSettingClass {
     this.size = this.getSizeFromOptions();
     this.borderSize = this.getBorderSizeFromOptions();
     this.tracingType = this.getTracingTypeFromOptions();
-    const option = Option.getOptionByName(this.options, STYLE);
-    const choiceIndex = option !== undefined ? Choice.indexOf(option.choices, option.default) : undefined;
-    if (choiceIndex !== undefined && indexToBrushTextures[choiceIndex] !== undefined) {
-      this.brushTexture = indexToBrushTextures[choiceIndex];
-    }
     this.pointsSize = this.getPointsSizeFromOptions();
   }
 
@@ -143,8 +130,7 @@ export class ApplicableSettingClass {
         this.borderSize === other.borderSize &&
         this.primaryColor === other.primaryColor &&
         this.secondaryColor === other.secondaryColor &&
-        this.tracingType === other.tracingType &&
-        this.brushTexture === other.brushTexture;
+        this.tracingType === other.tracingType;
   }
 }
 
@@ -152,6 +138,5 @@ export interface Config {
   size?: number;
   borderSize?: number;
   tracingType?: string;
-  brushTexture?: BrushTextures;
   pointsSize?: number | undefined;
 }

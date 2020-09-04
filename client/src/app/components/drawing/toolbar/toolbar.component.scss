@@ -169,14 +169,12 @@ p {
   height: $menu-item-height;
   transform: scaleY(1);
   visibility: visible;
-  transition: all 0.4s;
 }
 
 .hideCell {
   height: 0;
   transform: scaleY(0);
   visibility: hidden;
-  transition: all 0.4s;
 }
 
 .small-height {

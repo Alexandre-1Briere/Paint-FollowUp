@@ -12,7 +12,6 @@ import {
   MouseMovement,
   MouseWheelState,
 } from '../../logic/events/mouse/mouse-event-data';
-import { ClipboardService } from '../clipboard/clipboard.service';
 import { SvgCollisionsService } from '../collisions/svg-collisions.service';
 import { DrawingAccessorService } from '../current-drawing-accessor/drawing-accessor.service';
 import { KeyboardManagerService } from '../events/keyboard-manager.service';
@@ -21,20 +20,9 @@ import { SvgTransformationService } from '../svg-transformation/svg-transformati
 import { SvgComponentsManagerService } from '../svg/svg-components-manager.service';
 import { SvgUndoRedoService } from '../undo-redo/svg-undo-redo.service';
 import { ToolsOptionsManagerService } from './tools-options-manager/tools-options-manager.service';
-import { Aerosol } from './tools/aerosol/aerosol';
-import { ApplicateurDeCouleur } from './tools/applicateur-de-couleur/applicateur-de-couleur';
 import { Crayon } from './tools/crayon/crayon';
 import { Efface } from './tools/efface/efface';
-import { Ellipse } from './tools/ellipse/ellipse';
-import { Etampe } from './tools/etampe/etampe';
-import { Ligne } from './tools/ligne/ligne';
-import { Pinceau } from './tools/pinceau/pinceau';
-import { Pipette } from './tools/pipette/pipette';
-import { Plume } from './tools/plume/plume';
-import { Polygone } from './tools/polygone/polygone';
-import { PotDePeinture } from './tools/pot-de-peinture/pot-de-peinture';
 import { Rectangle } from './tools/rectangle/rectangle';
-import { Selection } from './tools/selection/selection';
 import { Tool } from './tools/tool/tool';
 
 @Injectable({
@@ -57,7 +45,6 @@ export class ToolManagerService {
       private svgCollisionsService: SvgCollisionsService,
       private svgComponentsManagerService: SvgComponentsManagerService,
       private svgTransformationService: SvgTransformationService,
-      private clipboardService: ClipboardService,
       private svgUndoRedoService: SvgUndoRedoService,
       private toolsOptionsManagerService: ToolsOptionsManagerService,
   ) {
@@ -101,8 +88,6 @@ export class ToolManagerService {
     Tool.SVG_COLLISIONS_SERVICE = this.svgCollisionsService;
     Tool.SVG_COMPONENT_MANAGER = this.svgComponentsManagerService;
     Tool.SVG_TRANSFORMATION_SERVICE = this.svgTransformationService;
-    Tool.CLIPBOARD_SERVICE = this.clipboardService;
-    this.clipboardService.initialise(this);
     Tool.TOOL_OPTIONS_MANAGER = this.toolsOptionsManagerService;
     Tool.UNDO_REDO_SERVICE = this.svgUndoRedoService;
   }
@@ -171,44 +156,11 @@ export class ToolManagerService {
     if (this.keyboardManagerService.checkKeyboardShortcut([KeyboardKey.Nbr1], [KeyboardKey.Ctrl])) {
       newTool = Rectangle.getInstance();
     }
-    if (this.keyboardManagerService.checkKeyboardShortcut([KeyboardKey.Nbr2], [KeyboardKey.Ctrl])) {
-      newTool = Ellipse.getInstance();
-    }
-    if (this.keyboardManagerService.checkKeyboardShortcut([KeyboardKey.Nbr3], [KeyboardKey.Ctrl])) {
-      newTool = Polygone.getInstance();
-    }
     if (this.keyboardManagerService.checkKeyboardShortcut([KeyboardKey.C], [KeyboardKey.Ctrl])) {
       newTool = Crayon.getInstance();
     }
-    if (this.keyboardManagerService.checkKeyboardShortcut([KeyboardKey.B], [KeyboardKey.Ctrl])) {
-      newTool = PotDePeinture.getInstance();
-    }
-    if (this.keyboardManagerService.checkKeyboardShortcut([KeyboardKey.W], [KeyboardKey.Ctrl])) {
-      newTool = Pinceau.getInstance();
-    }
-    if (this.keyboardManagerService.checkKeyboardShortcut([KeyboardKey.L], [KeyboardKey.Ctrl])) {
-      newTool = Ligne.getInstance();
-    }
-    if (this.keyboardManagerService.checkKeyboardShortcut([KeyboardKey.A], [KeyboardKey.Ctrl])) {
-      newTool = Aerosol.getInstance();
-    }
-    if (this.keyboardManagerService.checkKeyboardShortcut([KeyboardKey.I], [KeyboardKey.Ctrl])) {
-      newTool = Pipette.getInstance();
-    }
     if (this.keyboardManagerService.checkKeyboardShortcut([KeyboardKey.E], [KeyboardKey.Ctrl])) {
       newTool = Efface.getInstance();
-    }
-    if (this.keyboardManagerService.checkKeyboardShortcut([KeyboardKey.R], [KeyboardKey.Ctrl])) {
-      newTool = ApplicateurDeCouleur.getInstance();
-    }
-    if (this.keyboardManagerService.checkKeyboardShortcut([KeyboardKey.S], [KeyboardKey.Ctrl])) {
-      newTool = Selection.getInstance();
-    }
-    if (this.keyboardManagerService.checkKeyboardShortcut([KeyboardKey.P], [KeyboardKey.Ctrl])) {
-      newTool = Plume.getInstance();
-    }
-    if (this.keyboardManagerService.checkKeyboardShortcut([KeyboardKey.D], [KeyboardKey.Ctrl])) {
-      newTool = Etampe.getInstance();
     }
     if (newTool !== undefined) {
       this.setTool(newTool);

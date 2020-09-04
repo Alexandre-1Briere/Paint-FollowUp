@@ -2,13 +2,9 @@ import { ChangeDetectionStrategy, Component, HostListener, OnInit } from '@angul
 import { MatDialog } from '@angular/material/dialog';
 import { MOUSE_MOVE, MOUSE_UP } from '../../constants/mouse';
 import { toolsConfig } from '../../constants/tool-config';
-import { KeyboardKey } from '../../enums/keyboard';
 import { KeyboardManagerService } from '../../services/events/keyboard-manager.service';
 import { MouseDrawingInputsService } from '../../services/events/mouse-drawing-inputs.service';
-import { LocalLoaderService } from '../../services/storage/local-loader/local-loader.service';
 import { ToolManagerService } from '../../services/tool-manager/tool-manager.service';
-import { DownloadDialogComponent } from '../dialogs/download-dialog/download-dialog.component';
-import { SaveDrawingDialogComponent } from '../dialogs/save-drawing-dialog/save-drawing-dialog.component';
 import { ApplicableSettingClass, Config } from './tool-detail/applicable-setting.class';
 
 @Component({
@@ -26,13 +22,9 @@ export class DrawingComponent implements OnInit {
   complementaryColor: string;
   constructor(public keyboardManagerService: KeyboardManagerService,
               public dialog: MatDialog,
-              public loadLocalDrawingService: LocalLoaderService,
               public mouseDrawingInputsService: MouseDrawingInputsService,
               public toolManagerService: ToolManagerService) {
     this.complementaryColor = DrawingComponent.DEFAULT_COMPLEMENTARY_COLOR;
-    this.keyboardManagerService.getKeyboardStateObs().subscribe(() => {
-      this.checkForKeyboardShortcuts();
-    });
   }
 
   @HostListener('window:keydown', ['$event'])
@@ -42,18 +34,6 @@ export class DrawingComponent implements OnInit {
       event.preventDefault();
     }
     this.keyboardManagerService.receiveKeyboardEvent(event);
-    this.checkForKeyboardShortcuts();
-  }
-
-  checkForKeyboardShortcuts(): void {
-    if (this.keyboardManagerService.checkKeyboardShortcut([KeyboardKey.Ctrl, KeyboardKey.E], [] )) {
-      this.keyboardManagerService.enableShortcuts = false;
-      this.dialog.open(DownloadDialogComponent);
-    }
-    if (this.keyboardManagerService.checkKeyboardShortcut([KeyboardKey.Ctrl, KeyboardKey.S], [] )) {
-      this.keyboardManagerService.enableShortcuts = false;
-      this.dialog.open(SaveDrawingDialogComponent);
-    }
   }
 
   ngOnInit(): void {

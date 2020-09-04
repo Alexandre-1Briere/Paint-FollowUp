@@ -2,7 +2,6 @@ import { ElementRef } from '@angular/core';
 import { Documented } from '../../../../interfaces/documented';
 import { KeyboardState } from '../../../../logic/events/keyboard/keyboard-state';
 import { MouseEventData } from '../../../../logic/events/mouse/mouse-event-data';
-import {ClipboardService} from '../../../clipboard/clipboard.service';
 import { SvgCollisionsService } from '../../../collisions/svg-collisions.service';
 import { DrawingAccessorService } from '../../../current-drawing-accessor/drawing-accessor.service';
 import { KeyboardManagerService } from '../../../events/keyboard-manager.service';
@@ -22,7 +21,6 @@ export abstract class Tool implements Documented {
   static SVG_COMPONENT_MANAGER: SvgComponentsManagerService;
   static SVG_COLLISIONS_SERVICE: SvgCollisionsService;
   static SVG_TRANSFORMATION_SERVICE: SvgTransformationService;
-  static CLIPBOARD_SERVICE: ClipboardService;
   static TOOL_OPTIONS_MANAGER: ToolsOptionsManagerService;
   static UNDO_REDO_SERVICE: SvgUndoRedoService;
   static TRACKED_DRAWING_REF: ElementRef;

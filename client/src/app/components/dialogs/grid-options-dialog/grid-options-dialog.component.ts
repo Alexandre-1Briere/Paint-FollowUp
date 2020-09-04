@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { KeyboardManagerService } from '../../../services/events/keyboard-manager.service';
 import { GridManagerService } from '../../../services/grid-manager/grid-manager.service';
-import { StorageService } from '../../../services/storage/storage.service';
 import { SvgComponentsManagerService } from '../../../services/svg/svg-components-manager.service';
 
 @Component({
@@ -24,7 +23,6 @@ export class GridOptionsDialogComponent implements OnInit {
   initialSize: number;
 
   constructor(public dialogRef: MatDialogRef<GridOptionsDialogComponent>,
-              public storage: StorageService,
               private keyboardManagerService: KeyboardManagerService,
               public gridManagerService: GridManagerService,
               public svgComponentsManagerService: SvgComponentsManagerService,
