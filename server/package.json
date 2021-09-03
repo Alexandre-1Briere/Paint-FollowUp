@@ -35,7 +35,7 @@
         "instrument": true
     },
     "dependencies": {
-        "axios": "^0.19.2",
+        "axios": "^0.21.1",
         "body-parser": "^1.18.3",
         "chai-http": "^4.3.0",
         "cookie-parser": "1.4.4",
